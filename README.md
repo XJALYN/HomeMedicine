@@ -2,7 +2,7 @@
 
 一款面向家庭的 iOS 药箱管理应用：录入药品、追踪有效期、设置服药提醒，并支持 iCloud 同步与家庭共享。
 
-**项目主页**：[https://xjalyn.github.io/HomeMedicine/](https://xjalyn.github.io/HomeMedicine/)
+**项目主页**：[https://xjalyn.github.io/HomeMedicine/](https://xjalyn.github.io/HomeMedicine/) · **代码仓库**：[github.com/XJALYN/HomeMedicine](https://github.com/XJALYN/HomeMedicine)
 
 [![Website](https://img.shields.io/badge/website-项目主页-0fba82)](https://xjalyn.github.io/HomeMedicine/)
 [![Platform](https://img.shields.io/badge/platform-iOS%2017%2B-blue)](ios/HomeMedicine/)
@@ -46,8 +46,8 @@
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/home-medicine.git
-cd home-medicine
+git clone https://github.com/XJALYN/HomeMedicine.git
+cd HomeMedicine
 ```
 
 ### 2. 配置 API 密钥（AI 药盒识别）
