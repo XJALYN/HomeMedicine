@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Xcode
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+xcuserdata/
+DerivedData/
+build/
+*.moved-aside
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Secrets — never commit real API keys
+ios/HomeMedicine/HomeMedicine/Resources/BailianConfig.plist
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Cursor / IDE (optional local config)
+.cursor/

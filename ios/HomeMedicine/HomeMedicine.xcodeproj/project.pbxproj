@@ -1,0 +1,987 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		007BCE4CF6F15F8B89830B93 /* EntitlementChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AFD0A6E873C93B9AA65899 /* EntitlementChecker.swift */; };
+		0700D8BB7DEE5F157BF13C86 /* MedicineCoverThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225882D4E0B6BCD44936F023 /* MedicineCoverThumbnail.swift */; };
+		15D83C82B44FB388AD2BD55E /* BailianVisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB11E28E73ACB54851E7D47A /* BailianVisionService.swift */; };
+		16AD0BDFC09D6FB9C1D92B5A /* Products.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 29096B9EB86D66BD9B901AE7 /* Products.storekit */; };
+		1746CADA2736A78EF5D41AAA /* MedicineBoxPhotoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990762CA51E611A9381A3635 /* MedicineBoxPhotoStore.swift */; };
+		179855795DE0A06C30FCE18F /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6ECABBF8EA66F438C1A487 /* LaunchScreenView.swift */; };
+		17CFE9BD23D4A69802C48C39 /* AddMedicineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4029B4CB46915D17B51EF707 /* AddMedicineView.swift */; };
+		18CC214FB14CFB44D3C9FE33 /* MedicineActionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF70024E8130AE45AA3F8B34 /* MedicineActionService.swift */; };
+		1CD0C043509903843658BC7E /* CloudKitSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5F4E020976D40482A7D49D /* CloudKitSyncService.swift */; };
+		21D278F7FDE2E0DE47A6B856 /* MedicineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925F989714655E45EE0C3F6F /* MedicineStatus.swift */; };
+		27495F515D3A0F9E5474036E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4612F0963D89E5777762DA7A /* Assets.xcassets */; };
+		2C536C06F2EE155CF00B4909 /* HomeMedicineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C0E70D320B2A77C1C42F0 /* HomeMedicineUITests.swift */; };
+		313D7BDB75E25FC564806040 /* NotificationSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109B80CEAD27AB700A91AFF7 /* NotificationSchedulerTests.swift */; };
+		33511469F160378CBFB60E6D /* EntitlementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191AF88E3EEF4794B5440247 /* EntitlementTests.swift */; };
+		3B5A2FE6DF79D0CF00090D13 /* BarcodeLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4BAF849F64FD805B8A4EF8 /* BarcodeLookupService.swift */; };
+		3E37DE10EAFE39DCE75113C6 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E360E7F836BBA686038FEE90 /* PaywallView.swift */; };
+		3F54D9FB2B947AAEF098FAF6 /* FamilySharingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB3CEF8341C4A32BCC174D1 /* FamilySharingView.swift */; };
+		3FA59B0858D8178EA69FF47F /* BarcodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24DA70288790EEEA665CDDA /* BarcodeScannerView.swift */; };
+		48AA9F70522872DD4E58D56D /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73CC8AE2954C8A9ED464C01 /* NotificationScheduler.swift */; };
+		491F2002476BFEC6CC7A8807 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69B58BAFE6414ED461EA7216 /* ProfileView.swift */; };
+		4B3DDAC3C7710301B9767638 /* UsageQuotaStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2922E39CA4344B7891FF94B7 /* UsageQuotaStore.swift */; };
+		4F019D474B1D9C7DC5D10440 /* MedicineUnits.swift in Sources */ = {isa = PBXBuildFile; fileRef = C963672EC5ACCE4DE03BA345 /* MedicineUnits.swift */; };
+		5219AC0484A05F4E0E0783AA /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC3930996410250142A53F6 /* SubscriptionManager.swift */; };
+		56873BA0B40C1402C9901190 /* RemindersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECD67EB542715CA171E94A9 /* RemindersView.swift */; };
+		6027974D7DC390F0547694AB /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A75AE5636235A93F6A5D810 /* SettingsStore.swift */; };
+		60769E3C4BD87FF3F8EAD7BD /* BarcodeLookupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B6ACEFF7DDA14848C4E500 /* BarcodeLookupTests.swift */; };
+		64505C9D4841283FC8BFFC9C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF894C0D36F80C4B0029B233 /* InfoPlist.strings */; };
+		666D4DDB750E4341108B85E9 /* MedicineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C376D3492843B335FC18683 /* MedicineDetailView.swift */; };
+		6DC8D45284473C7384BF53CD /* AppBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44515E1835797C65824243EF /* AppBootstrap.swift */; };
+		6FBECF09A839F8C32B0AB13E /* MedicineBoxFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7847D7E34DA188C4E69288C6 /* MedicineBoxFace.swift */; };
+		7A07539D7A930E665BC0D24A /* ExpiredCleanupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C7380A769799F50CA08AD /* ExpiredCleanupView.swift */; };
+		7E32A4F8D25C6102C67CF819 /* BailianVisionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9EEAD2DFD4220AB1CF9670 /* BailianVisionServiceTests.swift */; };
+		7F86A17F162CD761AACB5435 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A03C22D1A69756ED72A994F2 /* Localizable.strings */; };
+		810B1EE3F1360D593D078691 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13ED70E305CE5948DEC61ECE /* DataModels.swift */; };
+		8AE0F96C9A6CB56C5E226A52 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00F7D0F5AF599996D87B916 /* SpeechRecognizer.swift */; };
+		8DE1152A9AC11C23A9097CF3 /* medicine_barcodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 61009E9BF60D800EDF4DD5A3 /* medicine_barcodes.json */; };
+		8ECC1433861E6A6AF7D872F5 /* MedicineStatusCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71556A3592924E4E6796654C /* MedicineStatusCalculatorTests.swift */; };
+		9A0CBF63518B1DC0EFA1FCBD /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8162B3379CAF2A6FC45343 /* CameraPicker.swift */; };
+		A55FA3F9ECB8544F11B89867 /* BailianConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649728BC46349F3B00C67FBF /* BailianConfig.swift */; };
+		AD36E1E5FB0C377C978C1068 /* SubscriptionTier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A026B8395A7F7A68D0BCAA93 /* SubscriptionTier.swift */; };
+		B249E492A28F9C4B17C82747 /* CloudKitSharingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FFCD9BC0398BCC73293AD2 /* CloudKitSharingService.swift */; };
+		B278D9E641E5DDA779EDF685 /* MedicineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9502D05EC79D2654D7D28179 /* MedicineListView.swift */; };
+		B60D7C4619A98BC1D2882DAE /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85FE84A22076DED8FD3D35DA /* AppTheme.swift */; };
+		BB8AD9C19585DFEAB70949B6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12BB820D28432B5691DE206 /* ContentView.swift */; };
+		C1444CD139921C570315C551 /* LocalizationBundleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF5595042079B5A8AF57507 /* LocalizationBundleTests.swift */; };
+		C3743DAAE2F3B0BC723057CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58868D7CE73E246018CC4320 /* AppDelegate.swift */; };
+		C6F8698A8DAF784FB88D5890 /* CloudKitPersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595C050135446D7899E0A5AF /* CloudKitPersistenceController.swift */; };
+		CCAEA33D2375FB80CBD7DB99 /* MedicineBoxPhotoStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721F026C367C230391EE428 /* MedicineBoxPhotoStoreTests.swift */; };
+		D5F2BBE24C561D105CADD00A /* HomeMedicineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2547C1294DD44BC26501776A /* HomeMedicineApp.swift */; };
+		DB5A6E040299FBB6022CB68A /* WeekdayFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068003FE384A41770E709B31 /* WeekdayFormatTests.swift */; };
+		DC311EE5A4C0EA1D1E582CB6 /* CloudSharingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF42D29F205B84806AA536F /* CloudSharingController.swift */; };
+		E087C5B170DAF57153C51991 /* BailianConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD7874D70F28807BF3D61571 /* BailianConfig.plist */; };
+		E3B1B01983430692BAD379C6 /* MedicineBoxScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D5A3C4F2A7DCE261F61A1 /* MedicineBoxScanView.swift */; };
+		E7C0CB843441464AF8348DB0 /* MedicineBoxPhotosEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BBEB8C2E7C99F780D23442A /* MedicineBoxPhotosEditorView.swift */; };
+		E9829D300E0EBD0B15E7F83E /* L10nExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891292873079A502D352B38 /* L10nExtensions.swift */; };
+		EB97DA580BADC8C5F727CD11 /* VoiceInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62A1CA81E901E53647BDBE3 /* VoiceInputField.swift */; };
+		EDD11385E53B12DDCF70AA48 /* AppRatingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB4CDCBA9064A9096AD6F71 /* AppRatingManager.swift */; };
+		F5A0C832905F2D99C486E828 /* AddReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC40DE88D105E46456130855 /* AddReminderView.swift */; };
+		F7766CBE76D4E289A63B5B07 /* MedicineTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A1B69140C2B9771D28FD4 /* MedicineTags.swift */; };
+		FF8948E093BBD3B101D33A95 /* CloudKitAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AF9AB7D35C395C9BA733B6 /* CloudKitAvailability.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E54D43F568AE44D5EC44A7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19A1121D51B72EEA1FEBFA14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C595B17B3E25763AD6AAB4E9;
+			remoteInfo = HomeMedicine;
+		};
+		C56EF7FB61F4090676AD1BF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19A1121D51B72EEA1FEBFA14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C595B17B3E25763AD6AAB4E9;
+			remoteInfo = HomeMedicine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0439663ED7EDBCB9ECA95AF7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		068003FE384A41770E709B31 /* WeekdayFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayFormatTests.swift; sourceTree = "<group>"; };
+		0A75AE5636235A93F6A5D810 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		0C23B076BC726A719E26D5A6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		109B80CEAD27AB700A91AFF7 /* NotificationSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSchedulerTests.swift; sourceTree = "<group>"; };
+		13ED70E305CE5948DEC61ECE /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		16FE146AA3CD0474EBE68A75 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		191AF88E3EEF4794B5440247 /* EntitlementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementTests.swift; sourceTree = "<group>"; };
+		194DFF90A01BF083499DF6F7 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1DF5595042079B5A8AF57507 /* LocalizationBundleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationBundleTests.swift; sourceTree = "<group>"; };
+		1ECD67EB542715CA171E94A9 /* RemindersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersView.swift; sourceTree = "<group>"; };
+		1EDE98EB955590B92685CFC0 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		21492506EEEC51A68FAE4FF5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2209261128401C698A0A88DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		225882D4E0B6BCD44936F023 /* MedicineCoverThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCoverThumbnail.swift; sourceTree = "<group>"; };
+		24AF9AB7D35C395C9BA733B6 /* CloudKitAvailability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitAvailability.swift; sourceTree = "<group>"; };
+		2547C1294DD44BC26501776A /* HomeMedicineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMedicineApp.swift; sourceTree = "<group>"; };
+		29096B9EB86D66BD9B901AE7 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		2922E39CA4344B7891FF94B7 /* UsageQuotaStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageQuotaStore.swift; sourceTree = "<group>"; };
+		2E3649970E37FD8A18524ADB /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		30B6ACEFF7DDA14848C4E500 /* BarcodeLookupTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeLookupTests.swift; sourceTree = "<group>"; };
+		315BD42B0BABED19122300C1 /* HomeMedicineUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HomeMedicineUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		32AB22FE355A0D4E26482619 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		35B07A1671F77A858FDD5432 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3657A42B309DF746AB55AA14 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		384403A98AF97AE6710ECC5F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3A39943A69EBF6C8E7297E94 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3A537078A3AF96833598F90B /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3C23820DDBE3BA5C486F01A6 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4029B4CB46915D17B51EF707 /* AddMedicineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicineView.swift; sourceTree = "<group>"; };
+		404B20497DF00E4BBDC0ABD4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		41C801D018E2657CE0DA3318 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		43F7E99BEB03BB6C5EE525E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		44515E1835797C65824243EF /* AppBootstrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBootstrap.swift; sourceTree = "<group>"; };
+		4612F0963D89E5777762DA7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		465E198B6A500B9EA8D55639 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48B03B7315F111139D63789B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		585A7F84A3C8E44CE150BB83 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
+		58868D7CE73E246018CC4320 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		595C050135446D7899E0A5AF /* CloudKitPersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitPersistenceController.swift; sourceTree = "<group>"; };
+		5A9EEAD2DFD4220AB1CF9670 /* BailianVisionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BailianVisionServiceTests.swift; sourceTree = "<group>"; };
+		5CF42D29F205B84806AA536F /* CloudSharingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSharingController.swift; sourceTree = "<group>"; };
+		5E15DB743E787FDAAD6638E8 /* HomeMedicine.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeMedicine.entitlements; sourceTree = "<group>"; };
+		61009E9BF60D800EDF4DD5A3 /* medicine_barcodes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = medicine_barcodes.json; sourceTree = "<group>"; };
+		649728BC46349F3B00C67FBF /* BailianConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BailianConfig.swift; sourceTree = "<group>"; };
+		65B77060BB271F2EBC9EE558 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		69B58BAFE6414ED461EA7216 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		6BBEB8C2E7C99F780D23442A /* MedicineBoxPhotosEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineBoxPhotosEditorView.swift; sourceTree = "<group>"; };
+		71556A3592924E4E6796654C /* MedicineStatusCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineStatusCalculatorTests.swift; sourceTree = "<group>"; };
+		7769AE3C1428A33434CC6985 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		7847D7E34DA188C4E69288C6 /* MedicineBoxFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineBoxFace.swift; sourceTree = "<group>"; };
+		7957D9852A9E0287960651B5 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7A173FC8E4DF061FD041C0F5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7B4540FEC5B899C2505FFEEE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7D12FE1D64B30E05408E1734 /* fi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fi; path = fi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7DB4CDCBA9064A9096AD6F71 /* AppRatingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRatingManager.swift; sourceTree = "<group>"; };
+		85FE84A22076DED8FD3D35DA /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		8669D350125637B19D22EEA1 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		884C7380A769799F50CA08AD /* ExpiredCleanupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpiredCleanupView.swift; sourceTree = "<group>"; };
+		8AFA5A40C92C577CD3124B6A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C376D3492843B335FC18683 /* MedicineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailView.swift; sourceTree = "<group>"; };
+		8C8A1B69140C2B9771D28FD4 /* MedicineTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTags.swift; sourceTree = "<group>"; };
+		8F606AE91CA0DFD769DA5610 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		925F989714655E45EE0C3F6F /* MedicineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineStatus.swift; sourceTree = "<group>"; };
+		9502D05EC79D2654D7D28179 /* MedicineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineListView.swift; sourceTree = "<group>"; };
+		96BC895ADD63EAA6AC985B7F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		990762CA51E611A9381A3635 /* MedicineBoxPhotoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineBoxPhotoStore.swift; sourceTree = "<group>"; };
+		99FFCD9BC0398BCC73293AD2 /* CloudKitSharingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSharingService.swift; sourceTree = "<group>"; };
+		9B0501DFD9D0C0BC87209EF5 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9B88ED4DF9E4609AAEEFA221 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9D38729F8377028B3DBC8FE4 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A026B8395A7F7A68D0BCAA93 /* SubscriptionTier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionTier.swift; sourceTree = "<group>"; };
+		A3AFD0A6E873C93B9AA65899 /* EntitlementChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitlementChecker.swift; sourceTree = "<group>"; };
+		A45D79A10C2E7B9FE8E9F339 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		A5B5E669896B9D2E4D25E415 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A65D8E0F9254C51695649881 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A721F026C367C230391EE428 /* MedicineBoxPhotoStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineBoxPhotoStoreTests.swift; sourceTree = "<group>"; };
+		A7A12149D52B868FEEB95982 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AA5F4E020976D40482A7D49D /* CloudKitSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitSyncService.swift; sourceTree = "<group>"; };
+		AB8CEE2C3FF44BD49EB2A330 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AD7874D70F28807BF3D61571 /* BailianConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = BailianConfig.plist; sourceTree = "<group>"; };
+		AEDFAFAE5032BE369444913A /* HomeMedicine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeMedicine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFA6E5C5EEA303B7E291F672 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
+		BC40DE88D105E46456130855 /* AddReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReminderView.swift; sourceTree = "<group>"; };
+		BD4BAF849F64FD805B8A4EF8 /* BarcodeLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeLookupService.swift; sourceTree = "<group>"; };
+		BF616929EC3E08DDC77C0242 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C838E9B84F2D0ED6F723E3DF /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C963672EC5ACCE4DE03BA345 /* MedicineUnits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineUnits.swift; sourceTree = "<group>"; };
+		CDD0A24DE55322E63E6F8482 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CF70368EEA3929BB2350B468 /* HomeMedicineTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = HomeMedicineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24CF3286CB577BEA5465655 /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D86C6CE15C3ED6B4D31EA91C /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D9569468FBA87B8917B95653 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E12BB820D28432B5691DE206 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E360E7F836BBA686038FEE90 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		E62A1CA81E901E53647BDBE3 /* VoiceInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputField.swift; sourceTree = "<group>"; };
+		E64DAD569D65630CD1B4E273 /* ms */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ms; path = ms.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E73CC8AE2954C8A9ED464C01 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		E891292873079A502D352B38 /* L10nExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10nExtensions.swift; sourceTree = "<group>"; };
+		EA8162B3379CAF2A6FC45343 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		EAB3CEF8341C4A32BCC174D1 /* FamilySharingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilySharingView.swift; sourceTree = "<group>"; };
+		EB9D5A3C4F2A7DCE261F61A1 /* MedicineBoxScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineBoxScanView.swift; sourceTree = "<group>"; };
+		EE9C0E70D320B2A77C1C42F0 /* HomeMedicineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMedicineUITests.swift; sourceTree = "<group>"; };
+		EEBB1FC71BEDB7C4410E3720 /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EFC3930996410250142A53F6 /* SubscriptionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
+		F00F7D0F5AF599996D87B916 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		F24DA70288790EEEA665CDDA /* BarcodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerView.swift; sourceTree = "<group>"; };
+		F570C1452FEA6CED00357D93 /* HomeMedicineRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HomeMedicineRelease.entitlements; sourceTree = "<group>"; };
+		F783BFD67BDD4DAD28AEDCA0 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F9845824AF9BF7546B91842B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F98AC5EB2DE285696A9E574A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FB11E28E73ACB54851E7D47A /* BailianVisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BailianVisionService.swift; sourceTree = "<group>"; };
+		FCF1DEA5A325BB2942B24E01 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FD6B1F2180143ADB14DBC79A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FE6ECABBF8EA66F438C1A487 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		FF70024E8130AE45AA3F8B34 /* MedicineActionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineActionService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		046271188087E359B3DF76CC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				44515E1835797C65824243EF /* AppBootstrap.swift */,
+				58868D7CE73E246018CC4320 /* AppDelegate.swift */,
+				2547C1294DD44BC26501776A /* HomeMedicineApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		091A937B14099162EE79C553 = {
+			isa = PBXGroup;
+			children = (
+				B0798E24CA91C99264C49F55 /* HomeMedicine */,
+				4E4193DECB68D0597FC9889D /* HomeMedicineTests */,
+				7FAD828E06EC335C1D91347F /* HomeMedicineUITests */,
+				37C379DE53F12A06D3FB5AA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		36F98A9A6846116AC1D4C8F7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4029B4CB46915D17B51EF707 /* AddMedicineView.swift */,
+				BC40DE88D105E46456130855 /* AddReminderView.swift */,
+				F24DA70288790EEEA665CDDA /* BarcodeScannerView.swift */,
+				EA8162B3379CAF2A6FC45343 /* CameraPicker.swift */,
+				5CF42D29F205B84806AA536F /* CloudSharingController.swift */,
+				E12BB820D28432B5691DE206 /* ContentView.swift */,
+				884C7380A769799F50CA08AD /* ExpiredCleanupView.swift */,
+				EAB3CEF8341C4A32BCC174D1 /* FamilySharingView.swift */,
+				FE6ECABBF8EA66F438C1A487 /* LaunchScreenView.swift */,
+				6BBEB8C2E7C99F780D23442A /* MedicineBoxPhotosEditorView.swift */,
+				EB9D5A3C4F2A7DCE261F61A1 /* MedicineBoxScanView.swift */,
+				225882D4E0B6BCD44936F023 /* MedicineCoverThumbnail.swift */,
+				8C376D3492843B335FC18683 /* MedicineDetailView.swift */,
+				9502D05EC79D2654D7D28179 /* MedicineListView.swift */,
+				E360E7F836BBA686038FEE90 /* PaywallView.swift */,
+				69B58BAFE6414ED461EA7216 /* ProfileView.swift */,
+				1ECD67EB542715CA171E94A9 /* RemindersView.swift */,
+				E62A1CA81E901E53647BDBE3 /* VoiceInputField.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		37C379DE53F12A06D3FB5AA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AEDFAFAE5032BE369444913A /* HomeMedicine.app */,
+				CF70368EEA3929BB2350B468 /* HomeMedicineTests.xctest */,
+				315BD42B0BABED19122300C1 /* HomeMedicineUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E4193DECB68D0597FC9889D /* HomeMedicineTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A9EEAD2DFD4220AB1CF9670 /* BailianVisionServiceTests.swift */,
+				30B6ACEFF7DDA14848C4E500 /* BarcodeLookupTests.swift */,
+				191AF88E3EEF4794B5440247 /* EntitlementTests.swift */,
+				1DF5595042079B5A8AF57507 /* LocalizationBundleTests.swift */,
+				A721F026C367C230391EE428 /* MedicineBoxPhotoStoreTests.swift */,
+				71556A3592924E4E6796654C /* MedicineStatusCalculatorTests.swift */,
+				109B80CEAD27AB700A91AFF7 /* NotificationSchedulerTests.swift */,
+				068003FE384A41770E709B31 /* WeekdayFormatTests.swift */,
+			);
+			path = HomeMedicineTests;
+			sourceTree = "<group>";
+		};
+		6992107F96247451DA472C61 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7DB4CDCBA9064A9096AD6F71 /* AppRatingManager.swift */,
+				649728BC46349F3B00C67FBF /* BailianConfig.swift */,
+				FB11E28E73ACB54851E7D47A /* BailianVisionService.swift */,
+				BD4BAF849F64FD805B8A4EF8 /* BarcodeLookupService.swift */,
+				24AF9AB7D35C395C9BA733B6 /* CloudKitAvailability.swift */,
+				595C050135446D7899E0A5AF /* CloudKitPersistenceController.swift */,
+				99FFCD9BC0398BCC73293AD2 /* CloudKitSharingService.swift */,
+				AA5F4E020976D40482A7D49D /* CloudKitSyncService.swift */,
+				A3AFD0A6E873C93B9AA65899 /* EntitlementChecker.swift */,
+				E891292873079A502D352B38 /* L10nExtensions.swift */,
+				FF70024E8130AE45AA3F8B34 /* MedicineActionService.swift */,
+				990762CA51E611A9381A3635 /* MedicineBoxPhotoStore.swift */,
+				E73CC8AE2954C8A9ED464C01 /* NotificationScheduler.swift */,
+				0A75AE5636235A93F6A5D810 /* SettingsStore.swift */,
+				F00F7D0F5AF599996D87B916 /* SpeechRecognizer.swift */,
+				EFC3930996410250142A53F6 /* SubscriptionManager.swift */,
+				2922E39CA4344B7891FF94B7 /* UsageQuotaStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		7FAD828E06EC335C1D91347F /* HomeMedicineUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EE9C0E70D320B2A77C1C42F0 /* HomeMedicineUITests.swift */,
+			);
+			path = HomeMedicineUITests;
+			sourceTree = "<group>";
+		};
+		B0798E24CA91C99264C49F55 /* HomeMedicine */ = {
+			isa = PBXGroup;
+			children = (
+				F570C1452FEA6CED00357D93 /* HomeMedicineRelease.entitlements */,
+				5E15DB743E787FDAAD6638E8 /* HomeMedicine.entitlements */,
+				F98AC5EB2DE285696A9E574A /* Info.plist */,
+				046271188087E359B3DF76CC /* App */,
+				BB7790BFFE08646D04C203C2 /* Models */,
+				D8350D358E11E72C7661A245 /* Resources */,
+				6992107F96247451DA472C61 /* Services */,
+				FD2BA44CBB489257EDA68E1F /* Theme */,
+				36F98A9A6846116AC1D4C8F7 /* Views */,
+			);
+			path = HomeMedicine;
+			sourceTree = "<group>";
+		};
+		BB7790BFFE08646D04C203C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13ED70E305CE5948DEC61ECE /* DataModels.swift */,
+				7847D7E34DA188C4E69288C6 /* MedicineBoxFace.swift */,
+				925F989714655E45EE0C3F6F /* MedicineStatus.swift */,
+				8C8A1B69140C2B9771D28FD4 /* MedicineTags.swift */,
+				C963672EC5ACCE4DE03BA345 /* MedicineUnits.swift */,
+				A026B8395A7F7A68D0BCAA93 /* SubscriptionTier.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D52B25DEE86E3C00C2041902 /* Localizations */ = {
+			isa = PBXGroup;
+			children = (
+				DF894C0D36F80C4B0029B233 /* InfoPlist.strings */,
+				A03C22D1A69756ED72A994F2 /* Localizable.strings */,
+			);
+			path = Localizations;
+			sourceTree = "<group>";
+		};
+		D8350D358E11E72C7661A245 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4612F0963D89E5777762DA7A /* Assets.xcassets */,
+				AD7874D70F28807BF3D61571 /* BailianConfig.plist */,
+				61009E9BF60D800EDF4DD5A3 /* medicine_barcodes.json */,
+				29096B9EB86D66BD9B901AE7 /* Products.storekit */,
+				D52B25DEE86E3C00C2041902 /* Localizations */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FD2BA44CBB489257EDA68E1F /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				85FE84A22076DED8FD3D35DA /* AppTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47A1B4447FF4F9F2A2513C78 /* HomeMedicineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6EFF5BDDC30A8B5C3F0E7E6E /* Build configuration list for PBXNativeTarget "HomeMedicineTests" */;
+			buildPhases = (
+				B6FCBAA5061495EA5024AC8F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0BC613F5A22F786A3B9EF3A1 /* PBXTargetDependency */,
+			);
+			name = HomeMedicineTests;
+			packageProductDependencies = (
+			);
+			productName = HomeMedicineTests;
+			productReference = CF70368EEA3929BB2350B468 /* HomeMedicineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		917E88152DE38ED28115E496 /* HomeMedicineUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B10D334E9692216E44745B4F /* Build configuration list for PBXNativeTarget "HomeMedicineUITests" */;
+			buildPhases = (
+				77A256CC55A36260550A5ABC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4FA320777F010C2239940B2E /* PBXTargetDependency */,
+			);
+			name = HomeMedicineUITests;
+			packageProductDependencies = (
+			);
+			productName = HomeMedicineUITests;
+			productReference = 315BD42B0BABED19122300C1 /* HomeMedicineUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C595B17B3E25763AD6AAB4E9 /* HomeMedicine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 582CE0A26C6B73E61735B8A3 /* Build configuration list for PBXNativeTarget "HomeMedicine" */;
+			buildPhases = (
+				23871F2CDC6F600908C0FED1 /* Sources */,
+				0287155FFC46ED1E176C2D8B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HomeMedicine;
+			packageProductDependencies = (
+			);
+			productName = HomeMedicine;
+			productReference = AEDFAFAE5032BE369444913A /* HomeMedicine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19A1121D51B72EEA1FEBFA14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					47A1B4447FF4F9F2A2513C78 = {
+						DevelopmentTeam = QZ4K2F8H93;
+					};
+					917E88152DE38ED28115E496 = {
+						DevelopmentTeam = QZ4K2F8H93;
+						TestTargetID = C595B17B3E25763AD6AAB4E9;
+					};
+					C595B17B3E25763AD6AAB4E9 = {
+						DevelopmentTeam = QZ4K2F8H93;
+					};
+				};
+			};
+			buildConfigurationList = B0B2A0087EDB7633B7AD3FEB /* Build configuration list for PBXProject "HomeMedicine" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				ar,
+				cs,
+				da,
+				de,
+				el,
+				en,
+				es,
+				fi,
+				fr,
+				hi,
+				id,
+				it,
+				ja,
+				ko,
+				ms,
+				nb,
+				nl,
+				pl,
+				"pt-BR",
+				ru,
+				sv,
+				th,
+				tr,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
+			);
+			mainGroup = 091A937B14099162EE79C553;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 37C379DE53F12A06D3FB5AA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C595B17B3E25763AD6AAB4E9 /* HomeMedicine */,
+				47A1B4447FF4F9F2A2513C78 /* HomeMedicineTests */,
+				917E88152DE38ED28115E496 /* HomeMedicineUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0287155FFC46ED1E176C2D8B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27495F515D3A0F9E5474036E /* Assets.xcassets in Resources */,
+				E087C5B170DAF57153C51991 /* BailianConfig.plist in Resources */,
+				64505C9D4841283FC8BFFC9C /* InfoPlist.strings in Resources */,
+				7F86A17F162CD761AACB5435 /* Localizable.strings in Resources */,
+				16AD0BDFC09D6FB9C1D92B5A /* Products.storekit in Resources */,
+				8DE1152A9AC11C23A9097CF3 /* medicine_barcodes.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23871F2CDC6F600908C0FED1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17CFE9BD23D4A69802C48C39 /* AddMedicineView.swift in Sources */,
+				F5A0C832905F2D99C486E828 /* AddReminderView.swift in Sources */,
+				6DC8D45284473C7384BF53CD /* AppBootstrap.swift in Sources */,
+				C3743DAAE2F3B0BC723057CA /* AppDelegate.swift in Sources */,
+				EDD11385E53B12DDCF70AA48 /* AppRatingManager.swift in Sources */,
+				B60D7C4619A98BC1D2882DAE /* AppTheme.swift in Sources */,
+				A55FA3F9ECB8544F11B89867 /* BailianConfig.swift in Sources */,
+				15D83C82B44FB388AD2BD55E /* BailianVisionService.swift in Sources */,
+				3B5A2FE6DF79D0CF00090D13 /* BarcodeLookupService.swift in Sources */,
+				3FA59B0858D8178EA69FF47F /* BarcodeScannerView.swift in Sources */,
+				9A0CBF63518B1DC0EFA1FCBD /* CameraPicker.swift in Sources */,
+				FF8948E093BBD3B101D33A95 /* CloudKitAvailability.swift in Sources */,
+				C6F8698A8DAF784FB88D5890 /* CloudKitPersistenceController.swift in Sources */,
+				B249E492A28F9C4B17C82747 /* CloudKitSharingService.swift in Sources */,
+				1CD0C043509903843658BC7E /* CloudKitSyncService.swift in Sources */,
+				DC311EE5A4C0EA1D1E582CB6 /* CloudSharingController.swift in Sources */,
+				BB8AD9C19585DFEAB70949B6 /* ContentView.swift in Sources */,
+				810B1EE3F1360D593D078691 /* DataModels.swift in Sources */,
+				007BCE4CF6F15F8B89830B93 /* EntitlementChecker.swift in Sources */,
+				7A07539D7A930E665BC0D24A /* ExpiredCleanupView.swift in Sources */,
+				3F54D9FB2B947AAEF098FAF6 /* FamilySharingView.swift in Sources */,
+				D5F2BBE24C561D105CADD00A /* HomeMedicineApp.swift in Sources */,
+				E9829D300E0EBD0B15E7F83E /* L10nExtensions.swift in Sources */,
+				179855795DE0A06C30FCE18F /* LaunchScreenView.swift in Sources */,
+				18CC214FB14CFB44D3C9FE33 /* MedicineActionService.swift in Sources */,
+				6FBECF09A839F8C32B0AB13E /* MedicineBoxFace.swift in Sources */,
+				1746CADA2736A78EF5D41AAA /* MedicineBoxPhotoStore.swift in Sources */,
+				E7C0CB843441464AF8348DB0 /* MedicineBoxPhotosEditorView.swift in Sources */,
+				E3B1B01983430692BAD379C6 /* MedicineBoxScanView.swift in Sources */,
+				0700D8BB7DEE5F157BF13C86 /* MedicineCoverThumbnail.swift in Sources */,
+				666D4DDB750E4341108B85E9 /* MedicineDetailView.swift in Sources */,
+				B278D9E641E5DDA779EDF685 /* MedicineListView.swift in Sources */,
+				21D278F7FDE2E0DE47A6B856 /* MedicineStatus.swift in Sources */,
+				F7766CBE76D4E289A63B5B07 /* MedicineTags.swift in Sources */,
+				4F019D474B1D9C7DC5D10440 /* MedicineUnits.swift in Sources */,
+				48AA9F70522872DD4E58D56D /* NotificationScheduler.swift in Sources */,
+				3E37DE10EAFE39DCE75113C6 /* PaywallView.swift in Sources */,
+				491F2002476BFEC6CC7A8807 /* ProfileView.swift in Sources */,
+				56873BA0B40C1402C9901190 /* RemindersView.swift in Sources */,
+				6027974D7DC390F0547694AB /* SettingsStore.swift in Sources */,
+				8AE0F96C9A6CB56C5E226A52 /* SpeechRecognizer.swift in Sources */,
+				5219AC0484A05F4E0E0783AA /* SubscriptionManager.swift in Sources */,
+				AD36E1E5FB0C377C978C1068 /* SubscriptionTier.swift in Sources */,
+				4B3DDAC3C7710301B9767638 /* UsageQuotaStore.swift in Sources */,
+				EB97DA580BADC8C5F727CD11 /* VoiceInputField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77A256CC55A36260550A5ABC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C536C06F2EE155CF00B4909 /* HomeMedicineUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6FCBAA5061495EA5024AC8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E32A4F8D25C6102C67CF819 /* BailianVisionServiceTests.swift in Sources */,
+				60769E3C4BD87FF3F8EAD7BD /* BarcodeLookupTests.swift in Sources */,
+				33511469F160378CBFB60E6D /* EntitlementTests.swift in Sources */,
+				C1444CD139921C570315C551 /* LocalizationBundleTests.swift in Sources */,
+				CCAEA33D2375FB80CBD7DB99 /* MedicineBoxPhotoStoreTests.swift in Sources */,
+				8ECC1433861E6A6AF7D872F5 /* MedicineStatusCalculatorTests.swift in Sources */,
+				313D7BDB75E25FC564806040 /* NotificationSchedulerTests.swift in Sources */,
+				DB5A6E040299FBB6022CB68A /* WeekdayFormatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0BC613F5A22F786A3B9EF3A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C595B17B3E25763AD6AAB4E9 /* HomeMedicine */;
+			targetProxy = 4E54D43F568AE44D5EC44A7F /* PBXContainerItemProxy */;
+		};
+		4FA320777F010C2239940B2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C595B17B3E25763AD6AAB4E9 /* HomeMedicine */;
+			targetProxy = C56EF7FB61F4090676AD1BF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A03C22D1A69756ED72A994F2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96BC895ADD63EAA6AC985B7F /* ar */,
+				48B03B7315F111139D63789B /* cs */,
+				585A7F84A3C8E44CE150BB83 /* da */,
+				21492506EEEC51A68FAE4FF5 /* de */,
+				AFA6E5C5EEA303B7E291F672 /* el */,
+				FD6B1F2180143ADB14DBC79A /* en */,
+				65B77060BB271F2EBC9EE558 /* es */,
+				7D12FE1D64B30E05408E1734 /* fi */,
+				A5B5E669896B9D2E4D25E415 /* fr */,
+				AB8CEE2C3FF44BD49EB2A330 /* hi */,
+				A7A12149D52B868FEEB95982 /* id */,
+				F9845824AF9BF7546B91842B /* it */,
+				2209261128401C698A0A88DF /* ja */,
+				8AFA5A40C92C577CD3124B6A /* ko */,
+				E64DAD569D65630CD1B4E273 /* ms */,
+				BF616929EC3E08DDC77C0242 /* nb */,
+				F783BFD67BDD4DAD28AEDCA0 /* nl */,
+				8669D350125637B19D22EEA1 /* pl */,
+				9B0501DFD9D0C0BC87209EF5 /* pt-BR */,
+				0439663ED7EDBCB9ECA95AF7 /* ru */,
+				35B07A1671F77A858FDD5432 /* sv */,
+				FCF1DEA5A325BB2942B24E01 /* th */,
+				2E3649970E37FD8A18524ADB /* tr */,
+				C838E9B84F2D0ED6F723E3DF /* vi */,
+				7A173FC8E4DF061FD041C0F5 /* zh-Hans */,
+				3A39943A69EBF6C8E7297E94 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DF894C0D36F80C4B0029B233 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				404B20497DF00E4BBDC0ABD4 /* ar */,
+				EEBB1FC71BEDB7C4410E3720 /* cs */,
+				194DFF90A01BF083499DF6F7 /* da */,
+				384403A98AF97AE6710ECC5F /* de */,
+				3A537078A3AF96833598F90B /* el */,
+				43F7E99BEB03BB6C5EE525E4 /* en */,
+				0C23B076BC726A719E26D5A6 /* es */,
+				465E198B6A500B9EA8D55639 /* fi */,
+				7B4540FEC5B899C2505FFEEE /* fr */,
+				9D38729F8377028B3DBC8FE4 /* hi */,
+				41C801D018E2657CE0DA3318 /* id */,
+				16FE146AA3CD0474EBE68A75 /* it */,
+				1EDE98EB955590B92685CFC0 /* ja */,
+				32AB22FE355A0D4E26482619 /* ko */,
+				A65D8E0F9254C51695649881 /* ms */,
+				D24CF3286CB577BEA5465655 /* nb */,
+				CDD0A24DE55322E63E6F8482 /* nl */,
+				7957D9852A9E0287960651B5 /* pl */,
+				7769AE3C1428A33434CC6985 /* pt-BR */,
+				3657A42B309DF746AB55AA14 /* ru */,
+				D86C6CE15C3ED6B4D31EA91C /* sv */,
+				9B88ED4DF9E4609AAEEFA221 /* th */,
+				3C23820DDBE3BA5C486F01A6 /* tr */,
+				D9569468FBA87B8917B95653 /* vi */,
+				A45D79A10C2E7B9FE8E9F339 /* zh-Hans */,
+				8F606AE91CA0DFD769DA5610 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0C0F27D9039694B00F690DB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.homemedicine.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeMedicine.app/HomeMedicine";
+			};
+			name = Debug;
+		};
+		165B4E7F7D01ED69F95B1B5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QZ4K2F8H93;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Home Medicine";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Capture medicine box photos for AI recognition.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record voice input for storage location and notes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Select medicine photos.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Convert speech to text for storage location and notes.";
+				INFOPLIST_KEY_NSUserNotificationsUsageDescription = "Send intake reminders and expiry alerts for your medicines.";
+				INFOPLIST_KEY_UIBackgroundModes = "remote-notification";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3763D3440291EA3CCC165BF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QZ4K2F8H93;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Home Medicine";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Capture medicine box photos for AI recognition.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record voice input for storage location and notes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Select medicine photos.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Convert speech to text for storage location and notes.";
+				INFOPLIST_KEY_NSUserNotificationsUsageDescription = "Send intake reminders and expiry alerts for your medicines.";
+				INFOPLIST_KEY_UIBackgroundModes = "remote-notification";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		46C1651C81EEDD779218A93F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.homemedicine.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomeMedicine.app/HomeMedicine";
+			};
+			name = Release;
+		};
+		4BDFEBC0950762E998A9486D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.homemedicine.app.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HomeMedicine;
+			};
+			name = Release;
+		};
+		5435CD0DCDF7A8D793B81E5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeMedicine/HomeMedicineRelease.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HomeMedicine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Home Medicine";
+				INFOPLIST_KEY_CFBundleLocalizations = "(en, zh-Hans, ja, es, de, fr, pt-BR, ko, it, ru, ar, zh-Hant, tr, nl, hi, pl, id, th, vi, sv, ms, da, fi, nb, el, cs)";
+				INFOPLIST_KEY_CloudKitContainerIdentifier = iCloud.com.homemedicine.app;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Capture medicine box photos for AI recognition.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record voice input for storage location and notes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Select medicine photos.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Convert speech to text for storage location and notes.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.homemedicine.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8DA2AD21C4CDE960364AE8F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HomeMedicine/HomeMedicine.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HomeMedicine/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Home Medicine";
+				INFOPLIST_KEY_CFBundleLocalizations = "(en, zh-Hans, ja, es, de, fr, pt-BR, ko, it, ru, ar, zh-Hant, tr, nl, hi, pl, id, th, vi, sv, ms, da, fi, nb, el, cs)";
+				INFOPLIST_KEY_CloudKitContainerIdentifier = iCloud.com.homemedicine.app;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Capture medicine box photos for AI recognition.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Record voice input for storage location and notes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Select medicine photos.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Convert speech to text for storage location and notes.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.homemedicine.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A2E5450A20D8D19958E63D31 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.homemedicine.app.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HomeMedicine;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		582CE0A26C6B73E61735B8A3 /* Build configuration list for PBXNativeTarget "HomeMedicine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DA2AD21C4CDE960364AE8F8 /* Debug */,
+				5435CD0DCDF7A8D793B81E5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6EFF5BDDC30A8B5C3F0E7E6E /* Build configuration list for PBXNativeTarget "HomeMedicineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C0F27D9039694B00F690DB6 /* Debug */,
+				46C1651C81EEDD779218A93F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B0B2A0087EDB7633B7AD3FEB /* Build configuration list for PBXProject "HomeMedicine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				165B4E7F7D01ED69F95B1B5A /* Debug */,
+				3763D3440291EA3CCC165BF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B10D334E9692216E44745B4F /* Build configuration list for PBXNativeTarget "HomeMedicineUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2E5450A20D8D19958E63D31 /* Debug */,
+				4BDFEBC0950762E998A9486D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19A1121D51B72EEA1FEBFA14 /* Project object */;
+}

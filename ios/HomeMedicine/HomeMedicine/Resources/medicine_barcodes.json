@@ -1,0 +1,351 @@
+{
+  "version": 1,
+  "source": "bundled verified OTC barcodes (39.net / 315jiage.cn public listings)",
+  "count": 43,
+  "products": [
+    {
+      "barcode": "6901339913419",
+      "name": "感冒灵颗粒",
+      "specification": "10g×9袋/盒",
+      "manufacturer": "华润三九医药股份有限公司",
+      "approvalNumber": "国药准字Z44021940",
+      "isOTC": true
+    },
+    {
+      "barcode": "6939261101079",
+      "name": "复方感冒灵颗粒",
+      "specification": "14g×15袋/盒",
+      "manufacturer": "桂林三金药业股份有限公司",
+      "approvalNumber": "国药准字Z45021591",
+      "isOTC": true
+    },
+    {
+      "barcode": "6920855052105",
+      "name": "连花清瘟胶囊",
+      "specification": "0.35g×72粒/盒",
+      "manufacturer": "石家庄以岭药业股份有限公司",
+      "approvalNumber": "国药准字Z20040063",
+      "isOTC": true
+    },
+    {
+      "barcode": "6913991301442",
+      "name": "布洛芬缓释胶囊",
+      "specification": "0.4g×24粒/盒",
+      "manufacturer": "中美天津史克制药有限公司",
+      "approvalNumber": "国药准字H20013062",
+      "isOTC": true
+    },
+    {
+      "barcode": "6913991300377",
+      "name": "布洛芬缓释胶囊",
+      "specification": "0.4g×24粒/盒",
+      "manufacturer": "中美天津史克制药有限公司",
+      "approvalNumber": "国药准字H20013062",
+      "isOTC": true
+    },
+    {
+      "barcode": "6913991301572",
+      "name": "布洛芬缓释胶囊",
+      "specification": "0.3g×24粒/盒",
+      "manufacturer": "中美天津史克制药有限公司",
+      "approvalNumber": "国药准字H10900089",
+      "isOTC": true
+    },
+    {
+      "barcode": "6913991300322",
+      "name": "布洛芬缓释胶囊",
+      "specification": "0.3g×20粒/盒",
+      "manufacturer": "中美天津史克制药有限公司",
+      "approvalNumber": "国药准字H10900089",
+      "isOTC": true
+    },
+    {
+      "barcode": "6921733101212",
+      "name": "布洛芬缓释胶囊",
+      "specification": "0.3g×20粒/盒",
+      "manufacturer": "珠海联邦制药股份有限公司",
+      "approvalNumber": "国药准字H19983137",
+      "isOTC": true
+    },
+    {
+      "barcode": "6936292120055",
+      "name": "阿莫西林胶囊",
+      "specification": "0.25g×24粒/盒",
+      "manufacturer": "石药集团中诺药业(石家庄)有限公司",
+      "approvalNumber": "国药准字H13020983",
+      "isOTC": false
+    },
+    {
+      "barcode": "6931435340284",
+      "name": "阿莫西林胶囊",
+      "specification": "0.25g×50粒/盒",
+      "manufacturer": "哈药集团制药总厂",
+      "approvalNumber": "国药准字H23020923",
+      "isOTC": false
+    },
+    {
+      "barcode": "4897005960004",
+      "name": "阿莫西林胶囊",
+      "specification": "0.25g×24粒/盒",
+      "manufacturer": "珠海联邦制药股份有限公司",
+      "approvalNumber": "国药准字H44023524",
+      "isOTC": false
+    },
+    {
+      "barcode": "6930159510010",
+      "name": "维生素C片",
+      "specification": "1.0g×100片/瓶",
+      "manufacturer": "汤臣倍健股份有限公司",
+      "approvalNumber": "国食健字G20110213",
+      "isOTC": true
+    },
+    {
+      "barcode": "6924370461077",
+      "name": "骨骼风痛胶囊",
+      "specification": "0.31g×36粒/盒",
+      "manufacturer": "长春海外制药集团有限公司",
+      "approvalNumber": "国药准字Z20090733",
+      "isOTC": true
+    },
+    {
+      "barcode": "6901070394652",
+      "name": "板蓝根颗粒",
+      "specification": "10g×20袋/盒",
+      "manufacturer": "云南白药集团股份有限公司",
+      "approvalNumber": "国药准字Z53021572",
+      "isOTC": true
+    },
+    {
+      "barcode": "6930578018364",
+      "name": "板蓝根颗粒",
+      "specification": "10g×20袋/盒",
+      "manufacturer": "江苏苏南药业实业有限公司",
+      "approvalNumber": "国药准字Z32021182",
+      "isOTC": true
+    },
+    {
+      "barcode": "6925670610080",
+      "name": "板蓝根颗粒",
+      "specification": "10g×20袋/盒",
+      "manufacturer": "陕西汉唐制药有限公司",
+      "approvalNumber": "国药准字Z61021297",
+      "isOTC": true
+    },
+    {
+      "barcode": "6925670600234",
+      "name": "板蓝根颗粒",
+      "specification": "10g×20袋/盒",
+      "manufacturer": "陕西汉唐制药有限公司",
+      "approvalNumber": "国药准字Z61021297",
+      "isOTC": true
+    },
+    {
+      "barcode": "6938200750767",
+      "name": "板蓝根颗粒",
+      "specification": "10g×20袋/盒",
+      "manufacturer": "广州白云山和记黄埔中药有限公司",
+      "approvalNumber": "国药准字Z44023485",
+      "isOTC": true
+    },
+    {
+      "barcode": "6927764907809",
+      "name": "蒙脱石散",
+      "specification": "3g×10袋/盒",
+      "manufacturer": "湖南华纳大药厂股份有限公司",
+      "approvalNumber": "国药准字H20093089",
+      "isOTC": true
+    },
+    {
+      "barcode": "6932833600109",
+      "name": "蒙脱石散",
+      "specification": "3g×10袋/盒",
+      "manufacturer": "博福-益普生(天津)制药有限公司",
+      "approvalNumber": "国药准字H20000690",
+      "isOTC": true
+    },
+    {
+      "barcode": "6938706203316",
+      "name": "藿香正气水",
+      "specification": "10ml×10支/盒",
+      "manufacturer": "北京同仁堂科技发展股份有限公司制药厂",
+      "approvalNumber": "国药准字Z11020377",
+      "isOTC": true
+    },
+    {
+      "barcode": "6934247900011",
+      "name": "复方氨酚烷胺片",
+      "specification": "6片×2板/盒",
+      "manufacturer": "吉林省吴太感康药业有限公司",
+      "approvalNumber": "国药准字H22026193",
+      "isOTC": true
+    },
+    {
+      "barcode": "6934247900028",
+      "name": "复方氨酚烷胺片",
+      "specification": "6片×2板/盒",
+      "manufacturer": "吉林省吴太感康药业有限公司",
+      "approvalNumber": "国药准字H22026193",
+      "isOTC": true
+    },
+    {
+      "barcode": "6934247900318",
+      "name": "复方氨酚烷胺片",
+      "specification": "8片×2板/盒",
+      "manufacturer": "吉林省吴太感康药业有限公司",
+      "approvalNumber": "国药准字H22026193",
+      "isOTC": true
+    },
+    {
+      "barcode": "6934247900462",
+      "name": "复方氨酚烷胺片",
+      "specification": "8片/盒",
+      "manufacturer": "吉林省吴太感康药业有限公司",
+      "approvalNumber": "国药准字H22026193",
+      "isOTC": true
+    },
+    {
+      "barcode": "6934247917019",
+      "name": "复方氨酚烷胺片",
+      "specification": "6片×3板/盒",
+      "manufacturer": "吉林省吴太感康药业有限公司",
+      "approvalNumber": "国药准字H22026193",
+      "isOTC": true
+    },
+    {
+      "barcode": "6939051800069",
+      "name": "氯雷他定片",
+      "specification": "10mg×6片/盒",
+      "manufacturer": "海南普利制药股份有限公司",
+      "approvalNumber": "国药准字H20046396",
+      "isOTC": true
+    },
+    {
+      "barcode": "6936225120015",
+      "name": "氯雷他定片",
+      "specification": "10mg×6片/盒",
+      "manufacturer": "拜耳医药保健有限公司",
+      "approvalNumber": "国药准字H10970410",
+      "isOTC": true
+    },
+    {
+      "barcode": "6923878310207",
+      "name": "奥美拉唑镁肠溶片",
+      "specification": "20mg×7片/盒",
+      "manufacturer": "阿斯利康制药有限公司",
+      "approvalNumber": "国药准字H20030412",
+      "isOTC": true
+    },
+    {
+      "barcode": "6903757060294",
+      "name": "健胃消食片",
+      "specification": "0.8g×32片/盒",
+      "manufacturer": "江中药业股份有限公司",
+      "approvalNumber": "国药准字Z36021410",
+      "isOTC": true
+    },
+    {
+      "barcode": "6921361200202",
+      "name": "碳酸钙D3片",
+      "specification": "600mg×60片/瓶",
+      "manufacturer": "惠氏制药有限公司",
+      "approvalNumber": "国药准字H10950029",
+      "isOTC": true
+    },
+    {
+      "barcode": "6904579201551",
+      "name": "六味地黄丸",
+      "specification": "9g×10丸/盒",
+      "manufacturer": "北京同仁堂股份有限公司",
+      "approvalNumber": "国药准字Z11020030",
+      "isOTC": true
+    },
+    {
+      "barcode": "6908085020118",
+      "name": "六味地黄丸",
+      "specification": "9g×10丸/盒",
+      "manufacturer": "仲景宛西制药股份有限公司",
+      "approvalNumber": "国药准字Z41021828",
+      "isOTC": true
+    },
+    {
+      "barcode": "6917392510434",
+      "name": "牛黄解毒片",
+      "specification": "0.3g×24片/盒",
+      "manufacturer": "北京同仁堂股份有限公司",
+      "approvalNumber": "国药准字Z11020029",
+      "isOTC": true
+    },
+    {
+      "barcode": "6938706202616",
+      "name": "京制牛黄解毒片",
+      "specification": "0.27g×24片/盒",
+      "manufacturer": "北京同仁堂股份有限公司",
+      "approvalNumber": "国药准字Z11020029",
+      "isOTC": true
+    },
+    {
+      "barcode": "6934572310042",
+      "name": "双黄连口服液",
+      "specification": "20ml×10支/盒",
+      "manufacturer": "河南太龙药业股份有限公司",
+      "approvalNumber": "国药准字Z41021829",
+      "isOTC": true
+    },
+    {
+      "barcode": "6923863031773",
+      "name": "蒲地蓝消炎片",
+      "specification": "0.3g×24片/盒",
+      "manufacturer": "济川药业集团有限公司",
+      "approvalNumber": "国药准字Z20030095",
+      "isOTC": true
+    },
+    {
+      "barcode": "6939261900238",
+      "name": "西瓜霜清咽含片",
+      "specification": "1.8g×16片/盒",
+      "manufacturer": "桂林三金药业股份有限公司",
+      "approvalNumber": "国药准字Z45020422",
+      "isOTC": true
+    },
+    {
+      "barcode": "6933149300011",
+      "name": "罗红霉素胶囊",
+      "specification": "0.15g×12粒/盒",
+      "manufacturer": "辅仁药业集团有限公司",
+      "approvalNumber": "国药准字H20030011",
+      "isOTC": false
+    },
+    {
+      "barcode": "6900572060263",
+      "name": "罗红霉素分散片",
+      "specification": "0.15g×6片/盒",
+      "manufacturer": "哈药集团制药总厂",
+      "approvalNumber": "国药准字H19980006",
+      "isOTC": false
+    },
+    {
+      "barcode": "6922154600018",
+      "name": "硝酸咪康唑乳膏",
+      "specification": "20g/支",
+      "manufacturer": "西安杨森制药有限公司",
+      "approvalNumber": "国药准字H10910074",
+      "isOTC": true
+    },
+    {
+      "barcode": "6928301411803",
+      "name": "阿苯达唑片",
+      "specification": "0.2g×12片/盒",
+      "manufacturer": "桂林南药股份有限公司",
+      "approvalNumber": "国药准字H45021501",
+      "isOTC": true
+    },
+    {
+      "barcode": "6901234567892",
+      "name": "阿莫西林胶囊",
+      "specification": "0.5g×24粒/盒",
+      "manufacturer": "华北制药",
+      "approvalNumber": "国药准字H13020983",
+      "isOTC": false
+    }
+  ]
+}

@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<script src="http://127.0.0.1:47823/vendor/tailwindcss.js" onerror="this.onerror=null;this.src='https://cdn.tailwindcss.com'"></script>
+<style>
+  html, body {
+    margin: 0; padding: 0; background: #fff; color: #111;
+    height: 100%;
+    max-height: 100%; overflow: hidden;
+  }
+  html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; width: 0; height: 0; }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  }
+  
+  @font-face {
+    font-family: 'Noto Sans SC';
+    src: local('Noto Sans SC'), local('PingFang SC'), local('Hiragino Sans GB'), local('Microsoft YaHei'), local('Source Han Sans SC');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Inter';
+    src: local('Inter'), local('SF Pro Display'), local('SF Pro Text'), local('Segoe UI'), local('Helvetica Neue');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Noto Sans';
+    src: local('Noto Sans'), local('PingFang SC'), local('Segoe UI'), local('Roboto');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+
+  [data-navigate] { cursor: pointer; }
+  #root {
+    position: relative; isolation: isolate;
+    height: 100vh; max-height: 100vh; overflow: hidden;
+  }
+
+  /* Selection mode visuals — never affect layout, only paint. */
+  .ss-mode-select, .ss-mode-select * { cursor: crosshair !important; }
+  .ss-mode-select [data-navigate] { cursor: crosshair !important; }
+  .ss-rubber {
+    position: fixed; pointer-events: none; z-index: 2147483646;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px dashed #6366f1;
+    box-sizing: border-box;
+  }
+  .ss-overlays {
+    position: fixed; inset: 0; pointer-events: none; z-index: 2147483645;
+  }
+  .ss-overlay {
+    position: absolute;
+    outline: 2px solid #6366f1;
+    outline-offset: -1px;
+    background: rgba(99, 102, 241, 0.08);
+    box-sizing: border-box;
+    border-radius: 2px;
+  }
+  .ss-overlay-hover {
+    position: absolute;
+    outline: 1px dashed #6366f1;
+    background: rgba(99, 102, 241, 0.04);
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  /* Interact mode (auto-complete interactions). */
+  .ss-mode-interact, .ss-mode-interact * { cursor: pointer !important; }
+  .ss-interact-hover {
+    position: fixed;
+    outline: 2px solid #a855f7;
+    background: rgba(168, 85, 247, 0.10);
+    pointer-events: none;
+    box-sizing: border-box;
+    border-radius: 2px;
+    z-index: 2147483646;
+  }
+  .ss-interact-pending {
+    position: fixed;
+    background: rgba(168, 85, 247, 0.15);
+    outline: 2px dashed #a855f7;
+    pointer-events: none;
+    box-sizing: border-box;
+    z-index: 2147483646;
+  }
+</style>
+</head>
+<body>
+<div id="root"><div class="min-h-screen bg-gray-50 text-gray-800 max-w-[390px] mx-auto flex flex-col" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
+
+  <!-- Status Bar Spacer -->
+  <div class="h-11 bg-white flex items-end justify-between px-5 pb-1">
+    <span class="text-xs font-semibold text-gray-900">9:41</span>
+    <div class="flex items-center gap-1">
+      <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 00-6 0zm-4-4l2 2a7.074 7.074 0 0110 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+      <svg class="w-4 h-4 text-gray-900" fill="currentColor" viewBox="0 0 24 24"><path d="M2 22h20V2z"/></svg>
+      <div class="w-6 h-3 border border-gray-900 rounded-sm relative"><div class="absolute inset-0.5 bg-gray-900 rounded-sm" style="width:70%"></div></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="bg-white px-4 pt-2 pb-3 flex items-center justify-between border-b border-gray-100">
+    <button data-navigate="medicine-list" class="w-10 h-10 -ml-1 rounded-full flex items-center justify-center active:bg-gray-100">
+      <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <h1 class="text-base font-semibold text-gray-900">药品详情</h1>
+    <button class="w-10 h-10 -mr-1 rounded-full flex items-center justify-center active:bg-gray-100">
+      <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/></svg>
+    </button>
+  </div>
+
+  <!-- Scrollable Content -->
+  <div class="flex-1 overflow-y-auto min-h-0 pb-28">
+
+    <!-- Hero Image Card -->
+    <div class="mx-4 mt-4 bg-gradient-to-br from-emerald-50 to-white rounded-2xl p-5 shadow-sm border border-emerald-100 flex flex-col items-center">
+      <div class="w-32 h-32 rounded-2xl bg-white flex items-center justify-center shadow-inner mb-4">
+        <img src="https://placehold.co/128x128/ECFDF5/059669?text=💊" class="w-24 h-24 rounded-xl" alt="布洛芬缓释胶囊" />
+      </div>
+      <div class="flex items-center gap-2 mb-1">
+        <h2 class="text-lg font-bold text-gray-900">布洛芬缓释胶囊</h2>
+        <span class="px-2 py-0.5 bg-amber-100 text-amber-700 text-[10px] font-bold rounded-full">临期</span>
+      </div>
+      <p class="text-xs text-gray-500">Ibuprofen Sustained-release Capsules</p>
+      <div class="flex items-center gap-1 mt-3 text-[11px] text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        <span class="font-medium">OTC · 非处方药</span>
+      </div>
+    </div>
+
+    <!-- Basic Info Card -->
+    <div class="mx-4 mt-4 bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center">
+          <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        </div>
+        <h3 class="text-sm font-semibold text-gray-900">基础信息</h3>
+      </div>
+      <div class="space-y-2.5">
+        <div class="flex items-center justify-between py-1.5 border-b border-gray-50">
+          <span class="text-xs text-gray-500">规格</span>
+          <span class="text-xs font-medium text-gray-800">0.3g × 20粒/盒</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-gray-50">
+          <span class="text-xs text-gray-500">生产厂家</span>
+          <span class="text-xs font-medium text-gray-800">中美天津史克制药</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-gray-50">
+          <span class="text-xs text-gray-500">批准文号</span>
+          <span class="text-xs font-medium text-gray-800">国药准字H20010308</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5 border-b border-gray-50">
+          <span class="text-xs text-gray-500">购入日期</span>
+          <span class="text-xs font-medium text-gray-800">2024-08-15</span>
+        </div>
+        <div class="flex items-center justify-between py-1.5">
+          <span class="text-xs text-gray-500">存放位置</span>
+          <span class="text-xs font-medium text-emerald-600 flex items-center gap-1">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            卧室床头柜
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Expiry Progress Card -->
+    <div class="mx-4 mt-4 bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-amber-50 flex items-center justify-center">
+            <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="text-sm font-semibold text-gray-900">有效期进度</h3>
+        </div>
+        <span class="text-[11px] font-bold text-amber-600">剩余 28%</span>
+      </div>
+
+      <div class="flex items-center justify-between text-xs mb-2">
+        <span class="text-gray-500">2024-08-15</span>
+        <span class="text-gray-500">2025-08-14</span>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="relative h-3 bg-gray-100 rounded-full overflow-hidden">
+        <div class="absolute inset-y-0 left-0 bg-gradient-to-r from-emerald-400 via-amber-400 to-amber-500 rounded-full" style="width: 72%"></div>
+        <div class="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-2 border-amber-500 rounded-full shadow-md" style="left: calc(72% - 8px)"></div>
+      </div>
+
+      <div class="mt-4 bg-amber-50 border border-amber-100 rounded-xl p-3 flex gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-amber-100 flex items-center justify-center flex-shrink-0">
+          <svg class="w-4 h-4 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+        </div>
+        <div class="flex-1">
+          <p class="text-xs font-semibold text-amber-900">将于 152 天后过期</p>
+          <p class="text-[11px] text-amber-700 mt-0.5">到期日：2025年8月14日，建议尽快使用</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible: Usage & Dosage -->
+    <div class="mx-4 mt-4 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button data-action="toggle:usage-panel" class="w-full px-4 py-3.5 flex items-center justify-between active:bg-gray-50">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center">
+            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          </div>
+          <h3 class="text-sm font-semibold text-gray-900">用法用量</h3>
+        </div>
+        <svg class="w-4 h-4 text-gray-400 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div id="usage-panel" class="hidden px-4 pb-4 border-t border-gray-50">
+        <div class="pt-3 space-y-3">
+          <div class="flex gap-3">
+            <div class="w-1 h-full bg-emerald-200 rounded-full flex-shrink-0"></div>
+            <div>
+              <p class="text-xs font-semibold text-gray-800">口服，成人一次1粒</p>
+              <p class="text-[11px] text-gray-500 mt-0.5">若疼痛或发热持续，可间隔 12 小时再服 1 粒</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-1 h-full bg-emerald-200 rounded-full flex-shrink-0"></div>
+            <div>
+              <p class="text-xs font-semibold text-gray-800">24 小时内不超过 2 粒</p>
+              <p class="text-[11px] text-gray-500 mt-0.5">请勿与其他含布洛芬药物同时服用</p>
+            </div>
+          </div>
+          <div class="flex gap-3">
+            <div class="w-1 h-full bg-emerald-200 rounded-full flex-shrink-0"></div>
+            <div>
+              <p class="text-xs font-semibold text-gray-800">宜饭后服用，整粒吞服</p>
+              <p class="text-[11px] text-gray-500 mt-0.5">不可咀嚼或压碎，以免破坏缓释结构</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Collapsible: Precautions -->
+    <div class="mx-4 mt-3 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+      <button data-action="toggle:precaution-panel" class="w-full px-4 py-3.5 flex items-center justify-between active:bg-gray-50">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center">
+            <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+          </div>
+          <h3 class="text-sm font-semibold text-gray-900">注意事项</h3>
+        </div>
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      </button>
+      <div id="precaution-panel" class="hidden px-4 pb-4 border-t border-gray-50">
+        <ul class="pt-3 space-y-2.5">
+          <li class="flex gap-2 text-xs text-gray-700">
+            <span class="text-red-500 font-bold flex-shrink-0">•</span>
+            <span>孕妇、哺乳期妇女及 12 岁以下儿童禁用</span>
+          </li>
+          <li class="flex gap-2 text-xs text-gray-700">
+            <span class="text-red-500 font-bold flex-shrink-0">•</span>
+            <span>有胃溃疡、消化道出血病史者慎用</span>
+          </li>
+          <li class="flex gap-2 text-xs text-gray-700">
+            <span class="text-red-500 font-bold flex-shrink-0">•</span>
+            <span>服药期间避免饮酒或含酒精饮料</span>
+          </li>
+          <li class="flex gap-2 text-xs text-gray-700">
+            <span class="text-red-500 font-bold flex-shrink-0">•</span>
+            <span>连续使用不超过 5 天，症状未缓解请就医</span>
+          </li>
+          <li class="flex gap-2 text-xs text-gray-700">
+            <span class="text-red-500 font-bold flex-shrink-0">•</span>
+            <span>遮光、密封，置阴凉干燥处保存（≤20℃）</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- History Timeline -->
+    <div class="mx-4 mt-3 bg-white rounded-2xl p-4 shadow-sm border border-gray-100">
+      <div class="flex items-center gap-2 mb-3">
+        <div class="w-7 h-7 rounded-lg bg-emerald-50 flex items-center justify-center">
+          <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h3 class="text-sm font-semibold text-gray-900">使用记录</h3>
+      </div>
+
+      <div class="space-y-3">
+        <div class="flex gap-3">
+          <div class="flex flex-col items-center">
+            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 mt-1"></div>
+            <div class="w-px flex-1 bg-gray-200"></div>
+          </div>
+          <div class="pb-3 flex-1">
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-semibold text-gray-800">服用 1 粒</p>
+              <span class="text-[10px] text-gray-400">3 天前</span>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-0.5">头痛，饭后服用，症状缓解</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <div class="flex flex-col items-center">
+            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 mt-1"></div>
+            <div class="w-px flex-1 bg-gray-200"></div>
+          </div>
+          <div class="pb-3 flex-1">
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-semibold text-gray-800">服用 1 粒</p>
+              <span class="text-[10px] text-gray-400">2 周前</span>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-0.5">发烧 38.2℃，睡前服用</p>
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <div class="flex flex-col items-center">
+            <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 mt-1"></div>
+          </div>
+          <div class="flex-1">
+            <div class="flex items-center justify-between">
+              <p class="text-xs font-semibold text-gray-800">入库登记</p>
+              <span class="text-[10px] text-gray-400">2024-08-15</span>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-0.5">首次录入，共 20 粒</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-6"></div>
+  </div>
+
+  <!-- Bottom Action Bar -->
+  <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[390px] bg-white border-t border-gray-100 px-4 pt-3 pb-7 shadow-[0_-4px_20px_rgba(0,0,0,0.04)]">
+    <div class="flex gap-2.5">
+      <button data-action="toast:已标记为用完" class="flex-1 h-12 bg-gray-100 text-gray-700 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 active:bg-gray-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        已用完
+      </button>
+      <button data-action="toast:已进入编辑模式" class="flex-1 h-12 bg-emerald-500 text-white text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 active:bg-emerald-600 shadow-sm shadow-emerald-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+        编辑
+      </button>
+      <button data-action="toast:已删除该药品" class="flex-1 h-12 bg-white text-red-500 text-xs font-semibold rounded-xl flex items-center justify-center gap-1.5 active:bg-red-50 border border-red-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg>
+        删除
+      </button>
+    </div>
+  </div>
+
+</div></div>
+<script>
+(function() {
+  var scrollable = false;
+  var root = document.getElementById('root');
+  var selectMode = false;
+  var selection = []; // array of {path:number[], el:Element}
+  var rubber = null;
+  var overlays = null;
+  var hoverOverlay = null;
+  var dragStart = null;
+
+  function pathOf(el) {
+    var p = [];
+    var cur = el;
+    while (cur && cur !== root) {
+      var parent = cur.parentNode;
+      if (!parent) return null;
+      var idx = Array.prototype.indexOf.call(parent.children, cur);
+      if (idx < 0) return null;
+      p.unshift(idx);
+      cur = parent;
+    }
+    return p;
+  }
+  function elFromPath(p) {
+    var cur = root;
+    for (var i = 0; i < p.length; i++) {
+      if (!cur || !cur.children || p[i] >= cur.children.length) return null;
+      cur = cur.children[p[i]];
+    }
+    return cur;
+  }
+  function ensureOverlaysHost() {
+    if (!overlays) {
+      overlays = document.createElement('div');
+      overlays.className = 'ss-overlays';
+      document.body.appendChild(overlays);
+    }
+    return overlays;
+  }
+  function clearOverlays() {
+    if (overlays) overlays.innerHTML = '';
+  }
+  function paintOverlays() {
+    var host = ensureOverlaysHost();
+    host.innerHTML = '';
+    selection.forEach(function(item) {
+      if (!item.el || !item.el.isConnected) return;
+      var r = item.el.getBoundingClientRect();
+      var d = document.createElement('div');
+      d.className = 'ss-overlay';
+      d.style.left = r.left + 'px';
+      d.style.top = r.top + 'px';
+      d.style.width = r.width + 'px';
+      d.style.height = r.height + 'px';
+      host.appendChild(d);
+    });
+  }
+  function postSelection() {
+    var payload = selection.map(function(it) {
+      return { path: it.path, outerHTML: it.el ? it.el.outerHTML : '' };
+    }).filter(function(x) { return x.outerHTML; });
+    parent.postMessage({ type: 'apmaker:selection', items: payload }, '*');
+  }
+  function clearSelection() {
+    selection = [];
+    clearOverlays();
+    postSelection();
+  }
+  function stripGoogleFontLoads(html) {
+    return html
+      .replace(/<link\b[^>]*\bhref=["']https?:\/\/fonts\.googleapis\.com[^"']*["'][^>]*>/gi, '')
+      .replace(/@import\s+url\(\s*["']?https?:\/\/fonts\.googleapis\.com[^)]*\)\s*;?/gi, '')
+      .replace(/@import\s+["']https?:\/\/fonts\.googleapis\.com[^"']*["']\s*;?/gi, '');
+  }
+  function enforceNoScroll() {
+    if (scrollable) return;
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+    root.style.overflow = 'hidden';
+    root.style.height = '100vh';
+    root.style.maxHeight = '100vh';
+    var all = root.querySelectorAll('*');
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      if (!el || !el.className || typeof el.className !== 'string') continue;
+      if (el.className.indexOf('min-h-screen') < 0) continue;
+      el.className = el.className.replace(/\bmin-h-screen\b/g, 'h-screen');
+      if (el.className.indexOf('overflow-hidden') < 0) el.classList.add('overflow-hidden');
+    }
+  }
+  function rectsIntersect(a, b) {
+    return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
+  }
+  function rectContains(outer, inner) {
+    return inner.left >= outer.left && inner.right <= outer.right
+        && inner.top >= outer.top && inner.bottom <= outer.bottom;
+  }
+
+  function collectInRect(rect) {
+    var hits = [];
+    var all = root.querySelectorAll('*');
+    for (var i = 0; i < all.length; i++) {
+      var el = all[i];
+      if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE') continue;
+      var r = el.getBoundingClientRect();
+      if (r.width <= 0 || r.height <= 0) continue;
+      if (!rectsIntersect(rect, r)) continue;
+      if (!rectContains(rect, r)) continue;
+      hits.push(el);
+    }
+    // Drop any element whose ancestor is also in hits — keep top-most containers.
+    var hitSet = new Set(hits);
+    var top = hits.filter(function(el) {
+      var p = el.parentElement;
+      while (p && p !== root) {
+        if (hitSet.has(p)) return false;
+        p = p.parentElement;
+      }
+      return true;
+    });
+    return top;
+  }
+
+  function setSelectMode(on) {
+    selectMode = !!on;
+    document.body.classList.toggle('ss-mode-select', selectMode);
+    if (!selectMode) {
+      clearSelection();
+      if (hoverOverlay && hoverOverlay.parentNode) hoverOverlay.parentNode.removeChild(hoverOverlay);
+      hoverOverlay = null;
+      if (rubber && rubber.parentNode) rubber.parentNode.removeChild(rubber);
+      rubber = null;
+      dragStart = null;
+    }
+  }
+
+  // === interact mode state ===
+  var interactMode = false;
+  var interactHoverOverlay = null;
+  var interactPendingOverlay = null;
+  // CSS selector for elements eligible to receive a click in interact mode.
+  // Anything already has navigate/action is included — user can re-wire it.
+  var INTERACT_TARGET_SEL = 'button, a, [role="button"], input, [data-action], [data-navigate]';
+  function isInteractTarget(el) {
+    if (!el || el === root) return false;
+    if (!root.contains(el)) return false;
+    return el.matches && el.matches(INTERACT_TARGET_SEL);
+  }
+  function nearestInteractTarget(el) {
+    if (!el) return null;
+    // Prefer the closest matching ancestor (handles clicks on icon inside button).
+    if (el.closest) return el.closest(INTERACT_TARGET_SEL);
+    return null;
+  }
+  function setInteractMode(on) {
+    interactMode = !!on;
+    document.body.classList.toggle('ss-mode-interact', interactMode);
+    if (!interactMode) {
+      if (interactHoverOverlay && interactHoverOverlay.parentNode) {
+        interactHoverOverlay.parentNode.removeChild(interactHoverOverlay);
+      }
+      interactHoverOverlay = null;
+      clearInteractPending();
+    }
+  }
+  function paintInteractHover(el) {
+    if (!el) {
+      if (interactHoverOverlay && interactHoverOverlay.parentNode) {
+        interactHoverOverlay.parentNode.removeChild(interactHoverOverlay);
+      }
+      interactHoverOverlay = null;
+      return;
+    }
+    var r = el.getBoundingClientRect();
+    if (!interactHoverOverlay) {
+      interactHoverOverlay = document.createElement('div');
+      interactHoverOverlay.className = 'ss-interact-hover';
+      ensureOverlaysHost().appendChild(interactHoverOverlay);
+    }
+    interactHoverOverlay.style.left = r.left + 'px';
+    interactHoverOverlay.style.top = r.top + 'px';
+    interactHoverOverlay.style.width = r.width + 'px';
+    interactHoverOverlay.style.height = r.height + 'px';
+  }
+  function setInteractPending(path) {
+    clearInteractPending();
+    if (!path) return;
+    var el = elFromPath(path);
+    if (!el) return;
+    var r = el.getBoundingClientRect();
+    interactPendingOverlay = document.createElement('div');
+    interactPendingOverlay.className = 'ss-interact-pending';
+    interactPendingOverlay.style.left = r.left + 'px';
+    interactPendingOverlay.style.top = r.top + 'px';
+    interactPendingOverlay.style.width = r.width + 'px';
+    interactPendingOverlay.style.height = r.height + 'px';
+    ensureOverlaysHost().appendChild(interactPendingOverlay);
+  }
+  function clearInteractPending() {
+    if (interactPendingOverlay && interactPendingOverlay.parentNode) {
+      interactPendingOverlay.parentNode.removeChild(interactPendingOverlay);
+    }
+    interactPendingOverlay = null;
+  }
+
+  // === data-action interpreter (declarative in-screen interactions) ===
+  function $id(id) { return document.getElementById(id); }
+  function runActions(spec) {
+    if (!spec) return;
+    var parts = spec.split(';');
+    for (var i = 0; i < parts.length; i++) {
+      var raw = parts[i].trim();
+      if (!raw) continue;
+      var colon = raw.indexOf(':');
+      if (colon < 0) { console.warn('[ss] bad data-action (no verb):', raw); continue; }
+      var verb = raw.slice(0, colon).trim();
+      var rest = raw.slice(colon + 1);
+      try {
+        if (verb === 'open') {
+          var oel = $id(rest.trim()); if (oel) oel.classList.remove('hidden');
+        } else if (verb === 'close') {
+          var cel = $id(rest.trim()); if (cel) cel.classList.add('hidden');
+        } else if (verb === 'toggle') {
+          var tel = $id(rest.trim()); if (tel) tel.classList.toggle('hidden');
+        } else if (verb === 'toast') {
+          showToast(rest);
+        } else if (verb === 'set-text') {
+          var sc = rest.indexOf(':');
+          if (sc < 0) { console.warn('[ss] bad set-text (need id:text):', raw); continue; }
+          var sel = $id(rest.slice(0, sc).trim());
+          if (sel) sel.textContent = rest.slice(sc + 1);
+        } else if (verb === 'add-class' || verb === 'remove-class') {
+          var ac = rest.indexOf(':');
+          if (ac < 0) { console.warn('[ss] bad ' + verb + ' (need id:cls):', raw); continue; }
+          var ael = $id(rest.slice(0, ac).trim());
+          if (ael) ael.classList[verb === 'add-class' ? 'add' : 'remove'](rest.slice(ac + 1).trim());
+        } else {
+          console.warn('[ss] unknown data-action verb:', verb);
+        }
+      } catch (err) {
+        console.warn('[ss] data-action failed:', raw, err);
+      }
+    }
+  }
+  var toastHost = null;
+  var toastTimer = null;
+  function showToast(msg) {
+    if (!toastHost) {
+      toastHost = document.createElement('div');
+      toastHost.style.cssText = 'position:fixed;left:50%;bottom:24px;transform:translateX(-50%);'
+        + 'z-index:2147483647;pointer-events:none;'
+        + 'background:rgba(17,24,39,0.92);color:#fff;font-size:13px;padding:8px 14px;'
+        + 'border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.25);opacity:0;transition:opacity .15s;';
+      document.body.appendChild(toastHost);
+    }
+    toastHost.textContent = msg;
+    toastHost.style.opacity = '1';
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(function() { if (toastHost) toastHost.style.opacity = '0'; }, 2500);
+  }
+
+  // === message channel from parent ===
+  window.addEventListener('message', function(e) {
+    var d = e.data;
+    if (!d || typeof d !== 'object') return;
+    if (d.type === 'apmaker:setHtml' && typeof d.html === 'string') {
+      selection = [];
+      clearOverlays();
+      clearInteractPending();
+      root.innerHTML = stripGoogleFontLoads(d.html);
+      enforceNoScroll();
+      postSelection();
+    } else if (d.type === 'apmaker:setSelectMode') {
+      setSelectMode(!!d.on);
+    } else if (d.type === 'apmaker:setInteractMode') {
+      setInteractMode(!!d.on);
+    } else if (d.type === 'apmaker:interact-pending') {
+      setInteractPending(Array.isArray(d.path) ? d.path : null);
+    } else if (d.type === 'apmaker:clearSelection') {
+      clearSelection();
+    }
+  });
+
+  // === navigation + data-action + interact mode ===
+  document.addEventListener('click', function(e) {
+    if (selectMode) { e.preventDefault(); e.stopPropagation(); return; }
+    if (interactMode) {
+      e.preventDefault(); e.stopPropagation();
+      var picked = nearestInteractTarget(e.target);
+      if (!picked) return;
+      var p = pathOf(picked);
+      if (!p) return;
+      var r = picked.getBoundingClientRect();
+      parent.postMessage({
+        type: 'apmaker:interact-target',
+        path: p,
+        outerHTML: picked.outerHTML,
+        rect: { left: r.left, top: r.top, width: r.width, height: r.height, bottom: r.bottom, right: r.right },
+      }, '*');
+      return;
+    }
+    var actionEl = e.target && e.target.closest && e.target.closest('[data-action]');
+    if (actionEl) {
+      e.preventDefault();
+      runActions(actionEl.getAttribute('data-action') || '');
+      return;
+    }
+    var t = e.target && e.target.closest && e.target.closest('[data-navigate]');
+    if (t) {
+      e.preventDefault();
+      parent.postMessage({ type: 'apmaker:navigate', to: t.getAttribute('data-navigate') }, '*');
+    }
+  }, true);
+  document.addEventListener('submit', function(e){ e.preventDefault(); }, true);
+
+  // === rubber-band selection ===
+  document.addEventListener('mousedown', function(e) {
+    if (!selectMode) return;
+    if (e.button !== 0) return;
+    e.preventDefault(); e.stopPropagation();
+    dragStart = { x: e.clientX, y: e.clientY, additive: e.shiftKey };
+    rubber = document.createElement('div');
+    rubber.className = 'ss-rubber';
+    rubber.style.left = e.clientX + 'px';
+    rubber.style.top = e.clientY + 'px';
+    rubber.style.width = '0px';
+    rubber.style.height = '0px';
+    document.body.appendChild(rubber);
+  }, true);
+  document.addEventListener('mousemove', function(e) {
+    if (interactMode) {
+      var picked = nearestInteractTarget(document.elementFromPoint(e.clientX, e.clientY));
+      paintInteractHover(picked);
+      return;
+    }
+    if (selectMode && !dragStart) {
+      // Hover indicator on the element under the cursor (top-most non-root).
+      var el = document.elementFromPoint(e.clientX, e.clientY);
+      while (el && el !== root && el.parentElement && el.parentElement !== root && el.tagName !== 'BODY') {
+        // Walk to first ancestor that is a direct/indirect child of root.
+        if (root.contains(el)) break;
+        el = el.parentElement;
+      }
+      if (!el || !root.contains(el) || el === root) {
+        if (hoverOverlay && hoverOverlay.parentNode) hoverOverlay.parentNode.removeChild(hoverOverlay);
+        hoverOverlay = null;
+        return;
+      }
+      var r = el.getBoundingClientRect();
+      if (!hoverOverlay) {
+        hoverOverlay = document.createElement('div');
+        hoverOverlay.className = 'ss-overlay-hover';
+        ensureOverlaysHost().appendChild(hoverOverlay);
+      }
+      hoverOverlay.style.left = r.left + 'px';
+      hoverOverlay.style.top = r.top + 'px';
+      hoverOverlay.style.width = r.width + 'px';
+      hoverOverlay.style.height = r.height + 'px';
+      return;
+    }
+    if (!selectMode || !dragStart || !rubber) return;
+    var x1 = Math.min(dragStart.x, e.clientX);
+    var y1 = Math.min(dragStart.y, e.clientY);
+    var x2 = Math.max(dragStart.x, e.clientX);
+    var y2 = Math.max(dragStart.y, e.clientY);
+    rubber.style.left = x1 + 'px';
+    rubber.style.top = y1 + 'px';
+    rubber.style.width = (x2 - x1) + 'px';
+    rubber.style.height = (y2 - y1) + 'px';
+  }, true);
+  document.addEventListener('mouseup', function(e) {
+    if (!selectMode || !dragStart) return;
+    e.preventDefault(); e.stopPropagation();
+    var x1 = Math.min(dragStart.x, e.clientX);
+    var y1 = Math.min(dragStart.y, e.clientY);
+    var x2 = Math.max(dragStart.x, e.clientX);
+    var y2 = Math.max(dragStart.y, e.clientY);
+    var rect = { left: x1, top: y1, right: x2, bottom: y2 };
+    var w = x2 - x1, h = y2 - y1;
+    var additive = dragStart.additive;
+    dragStart = null;
+    if (rubber && rubber.parentNode) rubber.parentNode.removeChild(rubber);
+    rubber = null;
+
+    var hits;
+    if (w < 4 && h < 4) {
+      // Treat as click — pick the topmost element under the cursor (relative to root).
+      var pt = document.elementFromPoint(x1, y1);
+      hits = (pt && root.contains(pt) && pt !== root) ? [pt] : [];
+    } else {
+      hits = collectInRect(rect);
+    }
+
+    if (!additive) selection = [];
+    var existingPaths = new Set(selection.map(function(it) { return it.path.join(','); }));
+    hits.forEach(function(el) {
+      var p = pathOf(el);
+      if (!p) return;
+      var key = p.join(',');
+      if (existingPaths.has(key)) return;
+      existingPaths.add(key);
+      selection.push({ path: p, el: el });
+    });
+    paintOverlays();
+    postSelection();
+  }, true);
+
+  // ESC clears selection. Also clear on click outside any current selection
+  // when in select mode and not drag-selecting.
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Escape') return;
+    if (selectMode) { e.preventDefault(); clearSelection(); }
+    if (interactMode) {
+      e.preventDefault();
+      paintInteractHover(null);
+      clearInteractPending();
+      // Tell parent to close composer / clear interactTarget.
+      parent.postMessage({ type: 'apmaker:interact-cancel' }, '*');
+    }
+  }, true);
+
+  // Keep overlays aligned on scroll/resize/content updates.
+  window.addEventListener('scroll', paintOverlays, true);
+  window.addEventListener('resize', paintOverlays);
+  var mo = new MutationObserver(function() {
+    // Drop selection items whose element detached.
+    selection = selection.filter(function(it) { return it.el && it.el.isConnected; });
+    paintOverlays();
+  });
+  mo.observe(root, { childList: true, subtree: true, attributes: true, characterData: true });
+  if (root.innerHTML.trim()) enforceNoScroll();
+})();
+</script>
+</body>
+</html>
