@@ -2,6 +2,9 @@
 
 一款面向家庭的 iOS 药箱管理应用：录入药品、追踪有效期、设置服药提醒，并支持 iCloud 同步与家庭共享。
 
+**项目主页**：[https://xjalyn.github.io/HomeMedicine/](https://xjalyn.github.io/HomeMedicine/)
+
+[![Website](https://img.shields.io/badge/website-项目主页-0fba82)](https://xjalyn.github.io/HomeMedicine/)
 [![Platform](https://img.shields.io/badge/platform-iOS%2017%2B-blue)](ios/HomeMedicine/)
 [![Swift](https://img.shields.io/badge/Swift-5.9-orange)](ios/HomeMedicine/)
 [![SwiftUI](https://img.shields.io/badge/UI-SwiftUI-green)](ios/HomeMedicine/HomeMedicine/Views/)
